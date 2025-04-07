@@ -1,0 +1,5 @@
+[33mcommit accc19b69fe0d0be71ce8d4c6651fa8926bcebf7[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: Bruno <brunohpacini@gmail.com>
+Date:   Mon Apr 7 15:20:47 2025 -0300
+
+    fix: rename unused error variable to _ in catch block
