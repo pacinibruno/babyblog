@@ -8,43 +8,33 @@ import {
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
+import { Post } from "@/types/supabase";
+import { formatDate } from "@/lib/utils";
 
 interface PostCardProps {
-  title: string;
-  description: string;
-  image: string;
-  slug: string;
-  date: string;
-  category: string;
+  post: Post;
 }
 
-export function PostCard({
-  title,
-  description,
-  image,
-  slug,
-  date,
-  category,
-}: PostCardProps) {
+export function PostCard({ post }: PostCardProps) {
   return (
     <Card className="w-full max-w-sm overflow-hidden">
       <div className="relative h-48 w-full">
-        <Image src={image} alt={title} fill className="object-cover" />
+        <Image src={post.image} alt={post.title} fill className="object-cover" />
       </div>
       <CardHeader>
         <div className="flex items-center gap-2 text-sm text-muted-foreground">
-          <span>{category}</span>
+          <span>{post.category}</span>
           <span>•</span>
-          <span>{date}</span>
+          <span>{formatDate(post.created_at)}</span>
         </div>
-        <CardTitle className="line-clamp-2">{title}</CardTitle>
+        <CardTitle className="line-clamp-2">{post.title}</CardTitle>
         <CardDescription className="line-clamp-2">
-          {description}
+          {post.description}
         </CardDescription>
       </CardHeader>
       <CardFooter>
         <Button asChild className="w-full">
-          <Link href={`/post/${slug}`}>Ler mais</Link>
+          <Link href={`/post/${post.slug}`}>Ler mais</Link>
         </Button>
       </CardFooter>
     </Card>
