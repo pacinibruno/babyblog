@@ -1,15 +1,9 @@
 import { getPostsByCategory } from '@/services/supabase';
 import { PostCard } from '@/components/post-card';
 import { notFound } from 'next/navigation';
+import { CategoryPageProps } from '@/types/pages';
 
-interface PageProps {
-  params: {
-    slug: string;
-  };
-  searchParams: { [key: string]: string | string[] | undefined };
-}
-
-export default async function CategoryPage({ params, searchParams }: PageProps) {
+export default async function CategoryPage({ params, searchParams }: CategoryPageProps) {
   const posts = await getPostsByCategory(params.slug);
 
   if (!posts.length) {
