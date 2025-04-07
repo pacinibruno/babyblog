@@ -9,7 +9,7 @@ export async function GET() {
       .limit(1)
 
     return NextResponse.json({ data })
-  } catch (_) {
+  } catch {
     return NextResponse.json(
       { error: 'Internal Server Error' },
       { status: 500 }
