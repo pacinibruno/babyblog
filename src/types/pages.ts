@@ -1,26 +1,21 @@
 import { Post } from './supabase';
 
 export interface PageProps {
-  params: {
-    [key: string]: string;
-  };
+  params: { [key: string]: string };
   searchParams: { [key: string]: string | string[] | undefined };
 }
 
-export interface CategoryPageProps extends PageProps {
-  params: {
-    slug: string;
-  };
+export interface CategoryPageProps {
+  params: { slug: string };
+  searchParams: { [key: string]: string | string[] | undefined };
 }
 
-export interface PostPageProps extends PageProps {
-  params: {
-    slug: string;
-  };
+export interface PostPageProps {
+  params: { slug: string };
+  searchParams: { [key: string]: string | string[] | undefined };
 }
 
-export interface AdminPageProps extends PageProps {
-  params: {
-    id?: string;
-  };
+export interface AdminPageProps {
+  params: { id?: string };
+  searchParams: { [key: string]: string | string[] | undefined };
 } 
