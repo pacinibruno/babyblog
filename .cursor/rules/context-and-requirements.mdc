@@ -1,0 +1,63 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Pais e Bebês – Instruções do Projeto
+
+## Contexto
+Este projeto é um blog voltado para pais e mães que buscam conteúdo confiável e curado, com recomendações de produtos infantis via links de afiliados da Amazon. O site será hospedado na Vercel, usando Next.js (App Router), Supabase para o backend e Shadcn para a UI.
+
+## Objetivo
+Desenvolver um blog de conteúdo + produtos com foco em SEO, usabilidade e performance mobile, visando conversão de afiliados.
+
+## Regras gerais
+
+- Use Next.js com App Router.
+- Toda a UI deve usar componentes do Shadcn.
+- Supabase é usado para dados (posts, produtos).
+- Toda tipografia deve ser legível, responsiva e amigável ao mobile.
+- Os posts devem conter blocos com links de afiliados da Amazon.
+- Sempre incluir componente para botão com `Ver na Amazon`.
+
+## Estrutura do Site
+
+### Páginas principais:
+- `/` – Homepage com últimas postagens e produtos recomendados
+- `/post/[slug]` – Página de post individual
+- `/categoria/[slug]` – Posts por categoria
+- `/produtos` – Lista de produtos recomendados
+- `/buscar` – Página de resultados de busca
+- `/newsletter` – Captura de e-mails
+- `/sobre` – Sobre o projeto
+- `/privacidade` – Política de privacidade
+- `/admin` – Painel de controle (privado)
+
+### Componentes reutilizáveis:
+- `PostCard`
+- `ProductCard`
+- `Navbar` e `Footer`
+- `AmazonButton`
+- `NewsletterForm`
+
+## UX/Usabilidade
+
+- Priorize mobile-first.
+- Use headings claros (H1, H2, H3) para conteúdo escaneável.
+- Use CTAs com boa hierarquia visual.
+- Sempre adicione um aviso de “link afiliado” nos posts.
+- Imagens devem ter lazy loading.
+- Incluir `alt` descritivo em todas as imagens.
+
+## Boas práticas
+
+- Rotas protegidas devem usar Supabase Auth.
+- Use loading states amigáveis com skeletons.
+- Mantenha código modular e reusável.
+- Evite código hardcoded onde possível — use `CMS` (Supabase).
+
+## SEO
+
+- Sempre preencha meta tags com título e descrição do post.
+- Use slugs legíveis baseados no título.
+- Gere sitemap.xml e robots.txt

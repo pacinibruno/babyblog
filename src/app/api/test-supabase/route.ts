@@ -1,18 +1,15 @@
-import { supabase } from '@/lib/supabase'
-import { NextResponse } from 'next/server'
+import { supabase } from "@/lib/supabase";
+import { NextResponse } from "next/server";
 
 export async function GET() {
   try {
-    const { data } = await supabase
-      .from('test')
-      .select('*')
-      .limit(1)
+    const { data } = await supabase.from("test").select("*").limit(1);
 
-    return NextResponse.json({ data })
+    return NextResponse.json({ data });
   } catch {
     return NextResponse.json(
-      { error: 'Internal Server Error' },
-      { status: 500 }
-    )
+      { error: "Internal Server Error" },
+      { status: 500 },
+    );
   }
-} 
+}
