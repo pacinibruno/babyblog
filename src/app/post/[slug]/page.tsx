@@ -2,12 +2,7 @@ import { notFound } from 'next/navigation';
 import { getPostBySlug } from '@/services/supabase';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import Image from 'next/image';
-
-interface PostPageProps {
-  params: {
-    slug: string;
-  };
-}
+import { PostPageProps } from '@/types/pages';
 
 export default async function PostPage({ params }: PostPageProps) {
   try {
