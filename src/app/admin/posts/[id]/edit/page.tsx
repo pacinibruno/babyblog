@@ -4,11 +4,13 @@ import { notFound } from 'next/navigation';
 import { AdminPageProps } from '@/types/pages';
 
 export default async function EditPostPage({ params, searchParams }: AdminPageProps) {
-  if (!params.id) {
+  const postId = params.id || '';
+
+  if (!postId) {
     notFound();
   }
 
-  const post = await getPostById(params.id);
+  const post = await getPostById(postId);
 
   if (!post) {
     notFound();
